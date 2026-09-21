@@ -1,0 +1,26 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background: #f0f5fa; color: #243247; }
+.container { width: 90%; max-width: 600px; margin: 50px auto; }
+.header { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
+.logo { background: #1677d2; color: white; width: 55px; height: 55px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: bold; }
+.header h1 { font-size: 25px; color: #163b65; }
+.header p { color: #718096; margin-top: 5px; }
+.card { background: white; padding: 30px; border-radius: 16px; box-shadow: 0 8px 30px rgba(30,60,90,.08); }
+.card h2 { color: #163b65; margin-bottom: 10px; }
+.subtitle { color: #718096; margin-bottom: 25px; }
+label { display: block; margin: 18px 0 8px; font-weight: bold; font-size: 14px; }
+input, select { width: 100%; padding: 13px; border: 1px solid #d6e0eb; border-radius: 8px; font-size: 15px; background: white; }
+input:focus, select:focus { outline: none; border-color: #1677d2; box-shadow: 0 0 0 2px rgba(22,119,210,.12); }
+button { width: 100%; margin-top: 25px; padding: 15px; border: none; border-radius: 8px; background: #1677d2; color: white; font-size: 16px; font-weight: bold; cursor: pointer; transition: .2s; }
+button:hover { background: #105fae; }
+.result { margin-top: 30px; border-top: 1px solid #e5edf5; padding-top: 25px; }
+.patient { margin: 10px 0; color: #53657a; }
+.result-box { background: #edf6ff; padding: 20px; border-radius: 10px; margin-top: 15px; text-align: center; }
+.result-box span { color: #53657a; font-size: 14px; }
+.result-box h3 { color: #1677d2; font-size: 32px; margin: 10px 0; }
+.result-box p { color: #53657a; }
+.warning { margin-top: 20px; padding: 15px; background: #fff4e5; color: #875c17; border-radius: 8px; font-size: 13px; line-height: 1.6; }
+.warning p { margin-top: 6px; }
+.error { margin-top: 20px; padding: 15px; background: #fff0f0; color: #b42318; border-radius: 8px; }
+footer { text-align: center; margin-top: 25px; color: #8492a6; font-size: 12px; line-height: 1.8; }
+@media (max-width: 480px) { .container { width: 94%; margin: 25px auto; } .card { padding: 20px; } .header h1 { font-size: 21px; } }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracetamol Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <div class="logo">+</div>
+        <div><h1>Paracetamol Calculator</h1><p>Patient dosage calculator</p></div>
+    </header>
+    <main class="card">
+        <h2>Patient Information</h2>
+        <p class="subtitle">Enter the patient's details below</p>
+        <form method="POST">
+            <label for="name">Patient Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter patient name" required>
+
+            <label for="age">Age (years)</label>
+            <input type="number" id="age" name="age" min="1" max="144" placeholder="Enter age in years" required>
+
+            <label for="weight">Weight (kg)</label>
+            <input type="number" id="weight" name="weight" min="0.1" max="150" step="0.1" placeholder="Enter weight" required>
+
+            <label for="strength">Paracetamol Concentration</label>
+            <select id="strength" name="strength" required>
+                <option value="">Select concentration</option>
+                <option value="120">120 mg / 5 mL</option>
+                <option value="125">125 mg / 5 mL</option>
+                <option value="160">160 mg / 5 mL</option>
+                <option value="100">100 mg / 1 mL (Drops)</option>
+            </select>
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if error %}<div class="error" role="alert">{{ error }}</div>{% endif %}
+        {% if result %}
+        <section class="result">
+            <h2>Calculation Result</h2>
+            <p class="patient">Patient: {{ result.name }}</p>
+            <p class="patient">Age: {{ result.age }} years</p>
+            <p class="patient">Weight: {{ result.weight }} kg</p>
+            <div class="result-box">
+                <span>Illustrative dose estimate</span>
+                <h3>{{ result.dose_ml }} mL</h3>
+                <p>{{ result.dose_mg }} mg</p>
+            </div>
+            <div class="warning">
+                <strong>Important safety notice</strong>
+                <p>This is an educational demonstration, not a clinically validated dose.
+                Do not use this result to administer medication. Confirm the dose,
+                product concentration, age restrictions, and dosing interval with a
+                pharmacist or clinician.</p>
+            </div>
+        </section>
+        {% endif %}
+    </main>
+    <footer><p>Paracetamol Calculator | Flask Web Application</p>
+    <p>Educational prototype — not for clinical use.</p></footer>
+</div>
+</body>
+</html>
